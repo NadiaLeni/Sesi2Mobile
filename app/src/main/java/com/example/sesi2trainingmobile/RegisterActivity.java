@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class RegisterActivity extends AppCompatActivity {
 
     Button register, toLogin;
-    EditText registerUsername, registerEmail, registerPassword;
+    EditText registerUsername, registerName, registerEmail, registerPassword;
     SharedPreferences sharedPref;
 
     @Override
@@ -23,6 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
         register = findViewById(R.id.btn_register);
         toLogin = findViewById(R.id.btn_toLogin);
         registerUsername = findViewById(R.id.et_registerUsername);
+        registerName = findViewById(R.id.et_registerName);
         registerEmail = findViewById(R.id.et_registerEmail);
         registerPassword = findViewById(R.id.et_registerPassword);
         sharedPref = getSharedPreferences("account", MODE_PRIVATE);
@@ -30,14 +31,15 @@ public class RegisterActivity extends AppCompatActivity {
         register.setOnClickListener(v -> {
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putString("account_username", registerUsername.getText().toString());
+            editor.putString("account_name", registerName.getText().toString());
             editor.putString("account_email", registerEmail.getText().toString());
             editor.putString("account_password", registerPassword.getText().toString());
             editor.apply();
 
             Toast.makeText(RegisterActivity.this, "Register Success, go to Login Activity", Toast.LENGTH_SHORT).show();
 
-            Intent registerIntent = new Intent(RegisterActivity.this, MainActivity.class);
-            startActivity(registerIntent);
+//            Intent registerIntent = new Intent(RegisterActivity.this, MainActivity.class);
+//            startActivity(registerIntent);
         });
 
         toLogin.setOnClickListener(v -> {

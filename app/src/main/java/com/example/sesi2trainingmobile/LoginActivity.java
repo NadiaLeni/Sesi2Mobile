@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         login = findViewById(R.id.btn_login);
-        toRegister = findViewById(R.id.btn_register);
+        toRegister = findViewById(R.id.btn_toRegister);
         loginUsername = findViewById(R.id.et_loginUsername);
         loginPassword = findViewById(R.id.et_loginPassword);
         sharedPref = getSharedPreferences("account", MODE_PRIVATE);
@@ -34,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
             } else if(loginUsername.getText().toString().equals(sharedPref.getString("account_username", "")) && loginPassword.getText().toString().equals(sharedPref.getString("account_password", ""))){
                 Intent loginIntent = new Intent(LoginActivity.this, MainActivity.class);
                 loginIntent.putExtra("account_username", sharedPref.getString("account_username", ""));
+                loginIntent.putExtra("account_email", sharedPref.getString("account_email", ""));
                 startActivity(loginIntent);
             }
         });

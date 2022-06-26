@@ -27,9 +27,16 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:hint="full name"
+        android:inputType="text"
+        android:id="@+id/et_registerName" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:hint="email"
         android:inputType="text"
-        android:id="@+id/et_registerEmail"/>
+        android:id="@+id/et_registerEmail" />
 
     <EditText
         android:layout_width="wrap_content"
