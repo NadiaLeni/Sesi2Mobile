@@ -3,11 +3,7 @@ package com.example.sesi2trainingmobile;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -38,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
             pageAdapter = new PageAdapter(this);
             pageAdapter.addFragment(new HomeFragment(), "Home");
             pageAdapter.addFragment(new InfoFragment(), "Info");
+            pageAdapter.addFragment(new NbaFragment(), "NBA");
             viewPager2.setAdapter(pageAdapter);
         }
     }
