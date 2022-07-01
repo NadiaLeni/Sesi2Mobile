@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
             pageAdapter = new PageAdapter(this);
             pageAdapter.addFragment(new HomeFragment(), "Home");
             pageAdapter.addFragment(new InfoFragment(), "Info");
-            pageAdapter.addFragment(new NbaFragment(), "NBA");
             viewPager2.setAdapter(pageAdapter);
         }
     }

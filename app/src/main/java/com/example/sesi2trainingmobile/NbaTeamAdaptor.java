@@ -8,13 +8,17 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.data.remote.NbaTeamItem;
+import com.example.sesi2trainingmobile.databinding.ItemNbaTeamBinding;
 
 import java.util.List;
 
 public class NbaTeamAdaptor extends RecyclerView.Adapter<NbaTeamAdaptor.ViewHolder> {
 
     private final List<NbaTeamItem> nbaTeamItems;
+
+
     public NbaTeamAdaptor(List<NbaTeamItem> nbaTeamItems){
         this.nbaTeamItems = nbaTeamItems;
     }
@@ -39,8 +43,17 @@ public class NbaTeamAdaptor extends RecyclerView.Adapter<NbaTeamAdaptor.ViewHold
 
         ItemNbaTeamBinding binding;
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
+        public ViewHolder(@NonNull ItemNbaTeamBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
+        }
+
+        void bind(NbaTeamItem nbaTeamItems){
+
+            binding.tvName.setText(nbaTeamItems.getName());
+            Glide.with(binding.getRoot())
+                    .load(nbaTeamItems.getLogo())
+                    .into(binding.ivLogo);
         }
     }
 }

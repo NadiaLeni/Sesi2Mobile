@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Button login, toRegister;
+    Button login, toRegister, toNba;
     EditText loginUsername, loginPassword;
     SharedPreferences sharedPref;
 
@@ -22,6 +22,7 @@ public class LoginActivity extends AppCompatActivity {
 
         login = findViewById(R.id.btn_login);
         toRegister = findViewById(R.id.btn_toRegister);
+        toNba = findViewById(R.id.btn_toNba);
         loginUsername = findViewById(R.id.et_loginUsername);
         loginPassword = findViewById(R.id.et_loginPassword);
         sharedPref = getSharedPreferences("account", MODE_PRIVATE);
@@ -42,6 +43,11 @@ public class LoginActivity extends AppCompatActivity {
         toRegister.setOnClickListener(v -> {
             Intent toRegisterIntent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(toRegisterIntent);
+        });
+
+        toNba.setOnClickListener(v -> {
+            Intent toNbaIntent = new Intent(LoginActivity.this, NbaActivity.class);
+            startActivity(toNbaIntent);
         });
     }
 }

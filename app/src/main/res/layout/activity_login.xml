@@ -43,4 +43,10 @@
         android:text="To Register"
         android:id="@+id/btn_toRegister" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="See NBA Team"
+        android:id="@+id/btn_toNba" />
+
 </LinearLayout>

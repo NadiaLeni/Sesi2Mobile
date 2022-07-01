@@ -1,6 +1,12 @@
 package com.example.data.remote;
 
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.http.GET;
+
 public interface ApiService {
 
-    @GET()
+    @GET("nbateams")
+    Call<List<NbaTeamItem>> getNbaTeams();
 }
